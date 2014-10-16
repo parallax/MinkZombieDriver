@@ -326,7 +326,7 @@ var node,
     result = browser.xpath({$xpathEncoded});
 
 while (node = result.iterateNext()) {
-    if (typeof node.nodeType != "undefined" && node.nodeType !== 10) {
+    if ((node != null) && (typeof node.nodeType != "undefined") && (node.nodeType !== 10)) {
         pointers.push(node);
         refs.push(pointers.length - 1);
     }
